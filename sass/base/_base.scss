@@ -1,0 +1,35 @@
+
+*, *::after, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem=10px
+
+    @include media(desktop) {
+        font-size: 75%;
+    }
+    @include media(tab-horz) {
+        font-size: 56.25%;
+    }
+    @include media(tab-vert) {
+        font-size: 50%;
+    }
+    @include media(phone) {
+        font-size: 44%;
+    }
+    
+    
+    
+}
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+    @include media(phone){
+        padding: 0;
+    }
+}
+

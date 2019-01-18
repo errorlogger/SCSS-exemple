@@ -1,0 +1,104 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding:1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: $default-font-size;
+        border: none; // pour <butonn> seulement
+        cursor: pointer;
+    }
+
+    &:visited{
+        border:1px solid black;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+        
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity:  0;
+        }
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform:tranlateY(-1px);
+        box-shadow: 0 0.5rem 1rem 0rem rgba($color-black,0.2);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey;
+        font-weight: 800;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &--green {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        font-weight: 800;
+    
+        &::after {
+            background-color: $color-primary-dark;
+        }
+    }    
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity:0.5;
+        transition: all .5s;
+    }
+    
+    
+    
+    &--animated {
+        animation: moveBottom 1.5s ease 0.8s;
+        animation-fill-mode: backwards; /* empeche l'apparition avant le début de l'animation à sa position d'origine*/
+    }
+}
+
+.btn-text {
+    &:link,&:visited {
+        font-size: $default-font-size;
+        font-weight: 700;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: transform 0.2s;
+    }
+
+    &:hover {
+        background: $color-primary-dark;
+        border-radius: 5px;
+        color: $color-white;
+        transform: translateY(-0.2rem);
+        box-shadow: 0.5rem 0.5rem 2rem rgba($color-black,0.2);
+    }
+
+    &:active {
+        transform: translateY(0rem);
+        box-shadow: 0.5rem 0.5rem 2rem rgba($color-black,0.2);
+    }
+}
+

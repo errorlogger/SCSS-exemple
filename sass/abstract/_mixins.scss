@@ -1,0 +1,33 @@
+@mixin floatFix{
+    &::after{
+        content:"";
+        clear:both;
+        display: table;
+    }
+}
+
+@mixin centerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA-QUERY
+
+
+
+@mixin media($breakpoint) {
+    @if $breakpoint == phone {
+        @media(max-width: 37.5em) { @content }; // 600px / 16px = 37.5em
+    }
+    @if $breakpoint == tab-vert {
+        @media(max-width: 56.25em) { @content }; // 900px
+    }
+    @if $breakpoint == tab-horz {
+        @media(max-width: 75em) { @content }; // 1200px
+    }
+    @if $breakpoint == desktop {
+        @media(min-width: 112.5em) { @content }; // 1800px
+    }
+}
